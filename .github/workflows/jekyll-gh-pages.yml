@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        /* Lluvia de corazones */
+        .heart {
+            position: fixed;
+            top: -10vh;
+            color: white;
+            font-size: 20px;
+            animation: fall linear infinite;
+            z-index: -1;
+        }
+        @keyframes fall {
+            to { transform: translateY(110vh); }
+        }
+
+        /* Contenedores */
+        #login-screen, #main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        #main-content {
+            display: none;
+            justify-content: flex-start;
+            padding-top: 50px;
+        }
+
+        /* Estilos de inputs y botones */
+        input {
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 1px solid white;
+            background: black;
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #ddd;
+        }
+
+        /* Secciones de contenido */
+        .section {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            width: 90%;
+            max-width: 600px;
+            text-align: left;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .list-container {
+            max-height: 200px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        
+        details {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        summary {
+            font-weight: bold;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        details p {
+            padding: 10px;
+            margin: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Pantalla de Acceso -->
+    <div id="login-screen">
+        <h1>Ingresa tu nombre para entrar</h1>
+        <input type="text" id="name-input" placeholder="Tu nombre...">
+        <button onclick="checkName()">Entrar</button>
+        <p id="error-message" style="color: red; display: none;">Acceso denegado.</p>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div id="main-content">
+        <h1>Bienvenida, Kassandra 🤍</h1>
+        
+        <div class="section">
+            <h2>100 Cosas que más me gustan de ti</h2>
+            <div class="list-container">
+                <ol>
+                    <li>Tu sonrisa que ilumina mis días.</li>
+                    <li>La forma en la que me miras.</li>
+                    <li>Lo inteligente que eres.</li>
+                    <li>Tu sentido del humor.</li>
+                    <li>Tu voz cuando me hablas.</li>
+                    <li>Tus ojos hermosos.</li>
+                    <li>La paz que me haces sentir.</li>
+                    <li>Lo fuerte y valiente que eres.</li>
+                    <li>Tus abrazos que lo curan todo.</li>
+                    <li>Cómo haces que cualquier momento sea especial.</li>
+                    <!-- Puedes copiar y pegar más líneas (<li>...</li>) aquí hasta llegar a 100 -->
+                    <li><em>(Añade aquí el resto de las cosas hermosas que piensas de ella)</em></li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Poemas para ti</h2>
+            <p>"Si el universo supiera cuánto te quiero,<br>
+            todas las estrellas brillarían solo para ti.<br>
+            Porque en tu luz encontré mi refugio,<br>
+            y en tus ojos, mi lugar favorito para vivir."</p>
+        </div>
+
+        <div class="section">
+            <h2>Lee esto cuando estés...</h2>
+            <details>
+                <summary>Estés triste 🌧️</summary>
+                <p>Recuerda que eres la persona más fuerte que conozco. Las tormentas pasan, pero lo increíble que eres se queda para siempre. Aquí estoy para ti, siempre.</p>
+            </details>
+            <details>
+                <summary>Me extrañes 🥺</summary>
+                <p>Cierra los ojos un segundo. Estoy pensando en ti justo ahora. Cuenta los días, las horas o los minutos, porque pronto volveremos a estar juntos.</p>
+            </details>
+            <details>
+                <summary>Dudes de ti misma 🤔</summary>
+                <p>Mírate a través de mis ojos por un momento y verás a la chica más maravillosa, capaz y perfecta del mundo. Tú puedes con todo.</p>
+            </details>
+        </div>
+
+        <div class="section">
+            <h2>Tú eres...</h2>
+            <p style="text-align: center; font-size: 20px; font-weight: bold;">
+                Mi casualidad más bonita,<br>
+                mi lugar seguro,<br>
+                y lo mejor que me ha pasado.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Lógica de acceso
+        function checkName() {
+            const name = document.getElementById("name-input").value.trim().toLowerCase();
+            if (name === "kassandra") {
+                document.getElementById("login-screen").style.display = "none";
+                document.getElementById("main-content").style.display = "flex";
+                createHearts();
+            } else {
+                document.getElementById("error-message").style.display = "block";
+            }
+        }
+
+        // Lluvia de corazones blancos
+        function createHearts() {
+            for (let i = 0; i < 30; i++) {
+                let heart = document.createElement("div");
+                heart.innerHTML = "🤍";
+                heart.classList.add("heart");
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDuration = Math.random() * 3 + 3 + "s"; // Entre 3 y 6 segundos
+                heart.style.opacity = Math.random() * 0.5 + 0.5;
+                document.body.appendChild(heart);
+            }
+        }
+    </script>
+</body>
+</html>
