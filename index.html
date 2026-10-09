@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para ti</title>
+    <title>Para Kassandra 🤍</title>
     <style>
         body {
             background-color: black;
@@ -44,63 +44,100 @@
 
         /* Estilos de inputs y botones */
         input {
-            padding: 10px;
+            padding: 12px;
             font-size: 18px;
-            border-radius: 5px;
+            border-radius: 8px;
             border: 1px solid white;
             background: black;
             color: white;
             text-align: center;
             margin-bottom: 20px;
+            width: 80%;
+            max-width: 300px;
         }
         button {
-            padding: 10px 20px;
+            padding: 12px 25px;
             font-size: 18px;
             background-color: white;
             color: black;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
+            transition: 0.3s;
         }
         button:hover {
-            background-color: #ddd;
+            background-color: #ccc;
         }
 
         /* Secciones de contenido */
         .section {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid white;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 15px 0;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
             width: 90%;
             max-width: 600px;
             text-align: left;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
         }
         h1, h2 {
             text-align: center;
         }
+        h2 {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
         .list-container {
-            max-height: 200px;
+            max-height: 300px;
             overflow-y: auto;
             padding-right: 10px;
         }
+        .list-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        .list-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 3px;
+        }
+        .list-container ol {
+            padding-left: 20px;
+            margin: 0;
+        }
+        .list-container li {
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
         
         details {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             cursor: pointer;
         }
         summary {
             font-weight: bold;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        summary:hover {
+            background: rgba(255, 255, 255, 0.25);
         }
         details p {
-            padding: 10px;
-            margin: 0;
-            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            margin: 5px 0 0 0;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 6px;
+            line-height: 1.5;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .poem-text {
+            text-align: center;
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 17px;
         }
     </style>
 </head>
@@ -108,66 +145,169 @@
 
     <!-- Pantalla de Acceso -->
     <div id="login-screen">
-        <h1>Ingresa tu nombre para entrar</h1>
-        <input type="text" id="name-input" placeholder="Tu nombre...">
+        <h1>¿Cómo te llamas? 🤍</h1>
+        <input type="text" id="name-input" placeholder="Escribe tu nombre...">
         <button onclick="checkName()">Entrar</button>
-        <p id="error-message" style="color: red; display: none;">Acceso denegado.</p>
+        <p id="error-message" style="color: #ff6b6b; display: none; margin-top: 15px; font-weight: bold;">Acceso denegado. Este espacio es solo para Kassandra.</p>
     </div>
 
     <!-- Contenido Principal -->
     <div id="main-content">
-        <h1>Bienvenida, Kassandra 🤍</h1>
+        <h1>Para la dueña de mi corazón 🤍</h1>
         
+        <!-- 100 Cosas -->
         <div class="section">
             <h2>100 Cosas que más me gustan de ti</h2>
             <div class="list-container">
                 <ol>
-                    <li>Tu sonrisa que ilumina mis días.</li>
-                    <li>La forma en la que me miras.</li>
-                    <li>Lo inteligente que eres.</li>
-                    <li>Tu sentido del humor.</li>
-                    <li>Tu voz cuando me hablas.</li>
-                    <li>Tus ojos hermosos.</li>
-                    <li>La paz que me haces sentir.</li>
-                    <li>Lo fuerte y valiente que eres.</li>
-                    <li>Tus abrazos que lo curan todo.</li>
-                    <li>Cómo haces que cualquier momento sea especial.</li>
-                    <!-- Puedes copiar y pegar más líneas (<li>...</li>) aquí hasta llegar a 100 -->
-                    <li><em>(Añade aquí el resto de las cosas hermosas que piensas de ella)</em></li>
+                    <li>Tu hermosa sonrisa que ilumina mis días.</li>
+                    <li>La forma tan tierna en la que me miras.</li>
+                    <li>Lo inteligente y capaz que eres.</li>
+                    <li>Tu risa, que es mi sonido favorito en el mundo.</li>
+                    <li>La paz que me haces sentir cuando estoy contigo.</li>
+                    <li>Tu sentido del humor único.</li>
+                    <li>Lo fuerte y valiente que eres ante cualquier situación.</li>
+                    <li>Tus abrazos, porque en ellos encuentro mi hogar.</li>
+                    <li>Cómo haces que cualquier momento simple se vuelva inolvidable.</li>
+                    <li>Tu forma de ver la vida y de esforzarte.</li>
+                    <li>Tus ojos, en los que me perdería por siempre.</li>
+                    <li>Lo mucho que me apoyas y me motivas.</li>
+                    <li>La nobleza y bondad de tu corazón.</li>
+                    <li>Tus manos suaves y cómo se sienten junto a las mías.</li>
+                    <li>Los detalles tan lindos que tienes.</li>
+                    <li>La confianza que me tienes.</li>
+                    <li>Cómo brillas con luz propia a donde quiera que vas.</li>
+                    <li>Tu voz dulce cuando me hablas.</li>
+                    <li>Las pláticas tan bonitas que tenemos de todo y de nada.</li>
+                    <li>Que siempre sabes cómo hacerme sonreír, incluso en mis días tristes.</li>
+                    <li>Tu paciencia conmigo.</li>
+                    <li>Lo increíblemente hermosa que eres por dentro y por fuera.</li>
+                    <li>La forma en que te emocionas por las cosas que te gustan.</li>
+                    <li>Tu buen gusto y estilo.</li>
+                    <li>Los momentos de silencio compartido que se sienten tan cómodos.</li>
+                    <li>Que eres mi cómplice y mi mejor compañía.</li>
+                    <li>Tu autenticidad, no temes ser tú misma.</li>
+                    <li>Cómo cuidas de los que amas.</li>
+                    <li>La manera en que arrugas la nariz cuando te da risa algo.</li>
+                    <li>Que cada día a tu lado aprendo algo nuevo.</li>
+                    <li>Tu ternura cuando estás cansada.</li>
+                    <li>La energía tan bonita que transmites.</li>
+                    <li>Que haces que mi corazón lata más rápido con solo un mensaje tuyo.</li>
+                    <li>Tu determinación para lograr tus metas.</li>
+                    <li>La forma en que me aceptas tal como soy.</li>
+                    <li>Que eres mi pensamiento favorito al despertar y al dormir.</li>
+                    <li>Lo bien que hueles siempre.</li>
+                    <li>Los planes y sueños que imagino a tu lado.</li>
+                    <li>Que eres una persona sumamente especial e irrepetible.</li>
+                    <li>Tu manera tan única de caminar.</li>
+                    <li>Que me inspiras a ser una mejor persona cada día.</li>
+                    <li>Tu hermosa cabellera.</li>
+                    <li>La complicidad que tenemos con una sola mirada.</li>
+                    <li>Que contigo no necesito actuar, puedo ser 100% yo.</li>
+                    <li>Tu empatía y lo mucho que te importa el bienestar de otros.</li>
+                    <li>Las ocurrencias tan divertidas que tienes de la nada.</li>
+                    <li>Que contigo el tiempo pasa volando.</li>
+                    <li>Tu valentía para enfrentar los retos.</li>
+                    <li>Cómo se ilumina tu rostro cuando estás feliz.</li>
+                    <li>Que eres dueña de mis pensamientos más bonitos.</li>
+                    <li>Tu forma de expresarte.</li>
+                    <li>La sinceridad con la que me hablas siempre.</li>
+                    <li>Que haces que la vida se sienta más ligera y hermosa.</li>
+                    <li>Tu capacidad de sorprenderme cada día.</li>
+                    <li>Que eres mi refugio seguro en este mundo.</li>
+                    <li>Lo linda que te ves cuando te distraes.</li>
+                    <li>Que me haces sentir la persona más afortunada del universo.</li>
+                    <li>Tu pasión por las cosas que te interesan.</li>
+                    <li>Que incluso en la distancia (o en silencio), te siento cerca.</li>
+                    <li>Tu forma de alegrarme con un simple "hola".</li>
+                    <li>Que eres mi paz y mi locura al mismo tiempo.</li>
+                    <li>La dulzura de tus besos.</li>
+                    <li>Que cada recuerdo a tu lado es un tesoro para mí.</li>
+                    <li>Tu intuición y lo perceptiva que eres.</li>
+                    <li>Que me conoces mejor que nadie.</li>
+                    <li>La manera en que te defiendes y defiendes lo que quieres.</li>
+                    <li>Que no importa el clima, tú siempre alegras mi día.</li>
+                    <li>Tu madurez para resolver las cosas.</li>
+                    <li>Que me haces creer en el amor bonito.</li>
+                    <li>Tu risa contagiosa.</li>
+                    <li>Que eres una obra de arte caminando.</li>
+                    <li>La paz que me da escuchar tu respiración.</li>
+                    <li>Que compartas conmigo tus momentos felices y difíciles.</li>
+                    <li>Tu carisma inigualable.</li>
+                    <li>Que a tu lado todo tiene más sentido.</li>
+                    <li>Lo especial que haces que me sienta.</li>
+                    <li>Tu alma tan pura y limpia.</li>
+                    <li>Que eres mi más bonita casualidad.</li>
+                    <li>La forma en que te acomodas el cabello.</li>
+                    <li>Que siempre encuentras la manera de motivarme.</li>
+                    <li>Tu inteligencia emocional.</li>
+                    <li>Que eres la protagonista de mis mejores sueños.</li>
+                    <li>La honestidad de tus sentimientos.</li>
+                    <li>Que tu felicidad se ha vuelto la mía.</li>
+                    <li>Tu carita cuando te concentras en algo.</li>
+                    <li>Que tienes el poder de cambiar mi estado de ánimo con solo una palabra.</li>
+                    <li>La nobleza que habita en ti.</li>
+                    <li>Que eres única en este mundo.</li>
+                    <li>Los planes futuros que construimos en nuestras mentes.</li>
+                    <li>Tu forma tan tierna de decir las cosas.</li>
+                    <li>Que contigo aprendí que el amor se trata de cuidar al otro.</li>
+                    <li>Tu optimismo ante las adversidades.</li>
+                    <li>Que cada segundo contigo vale oro.</li>
+                    <li>Tu presencia que lo llena todo de luz.</li>
+                    <li>Que eres mi persona favorita en el mundo entero.</li>
+                    <li>Tu lealtad y corazón sincero.</li>
+                    <li>Que mi vida es infinitamente mejor desde que llegaste a ella.</li>
+                    <li>Tu esencia inconfundible.</li>
+                    <li>Que te amo tal y como eres, con cada pequeño detalle.</li>
+                    <li>Simplemente... porque eres tú, Kassandra, la niña de mis ojos.</li>
                 </ol>
             </div>
         </div>
 
+        <!-- Poemas -->
         <div class="section">
             <h2>Poemas para ti</h2>
-            <p>"Si el universo supiera cuánto te quiero,<br>
-            todas las estrellas brillarían solo para ti.<br>
-            Porque en tu luz encontré mi refugio,<br>
-            y en tus ojos, mi lugar favorito para vivir."</p>
+            <p class="poem-text">
+                "Si el universo supiera cuánto te quiero,<br>
+                todas las estrellas brillarían solo para ti.<br>
+                Porque en tu luz encontré mi refugio,<br>
+                y en tus ojos, mi lugar favorito para vivir.<br><br>
+                Eres el verso que nunca termina,<br>
+                la melodía que calma mi tempestad,<br>
+                y el amor más puro y sincero<br>
+                que mi alma ha tenido la dicha de encontrar."
+            </p>
         </div>
 
+        <!-- Lee esto cuando estés... -->
         <div class="section">
             <h2>Lee esto cuando estés...</h2>
             <details>
-                <summary>Estés triste 🌧️</summary>
-                <p>Recuerda que eres la persona más fuerte que conozco. Las tormentas pasan, pero lo increíble que eres se queda para siempre. Aquí estoy para ti, siempre.</p>
+                <summary>Triste 🌧️</summary>
+                <p>Recuerda que eres la persona más fuerte, valiosa y hermosa que conozco. Las tormentas pasan, pero lo increíble que eres se queda para siempre. Si necesitas llorar, hazlo, pero nunca olvides que te amo con el alma y que estoy contigo, dispuesto a recordarte lo mucho que vales.</p>
             </details>
             <details>
                 <summary>Me extrañes 🥺</summary>
-                <p>Cierra los ojos un segundo. Estoy pensando en ti justo ahora. Cuenta los días, las horas o los minutos, porque pronto volveremos a estar juntos.</p>
+                <p>Cierra los ojos un segundo e imagina que estoy abrazándote fuerte. Estoy pensando en ti justo ahora, sin importar el momento ni la hora. Cuenta los minutos para volver a vernos, porque yo también cuento cada segundo para estar junto a ti de nuevo.</p>
             </details>
             <details>
                 <summary>Dudes de ti misma 🤔</summary>
-                <p>Mírate a través de mis ojos por un momento y verás a la chica más maravillosa, capaz y perfecta del mundo. Tú puedes con todo.</p>
+                <p>Mírate a través de mis ojos por un instante y verás a la chica más inteligente, capaz, brillante y perfecta del mundo. No hay nada en este mundo que no puedas lograr. Cree en ti tanto como yo creo en ti.</p>
+            </details>
+            <details>
+                <summary>Ested enojada 😤</summary>
+                <p>Respira hondo, mi amor. Entiendo que a veces el mundo puede ser pesado, pero pase lo que pase, mi cariño por ti no cambia. Aquí estoy para escucharte, para darte tu espacio o para abrazarte fuerte hasta que la calma regrese a ti.</p>
             </details>
         </div>
 
+        <!-- Tú eres -->
         <div class="section">
             <h2>Tú eres...</h2>
-            <p style="text-align: center; font-size: 20px; font-weight: bold;">
+            <p style="text-align: center; font-size: 20px; font-weight: bold; line-height: 1.8;">
                 Mi casualidad más bonita,<br>
-                mi lugar seguro,<br>
-                y lo mejor que me ha pasado.
+                mi lugar seguro en medio del caos,<br>
+                la dueña de mis pensamientos más sinceros,<br>
+                y sin duda alguna... lo mejor que me ha pasado en la vida. 🤍
             </p>
         </div>
     </div>
@@ -187,13 +327,14 @@
 
         // Lluvia de corazones blancos
         function createHearts() {
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < 40; i++) {
                 let heart = document.createElement("div");
                 heart.innerHTML = "🤍";
                 heart.classList.add("heart");
                 heart.style.left = Math.random() * 100 + "vw";
                 heart.style.animationDuration = Math.random() * 3 + 3 + "s"; // Entre 3 y 6 segundos
-                heart.style.opacity = Math.random() * 0.5 + 0.5;
+                heart.style.opacity = Math.random() * 0.6 + 0.4;
+                heart.style.fontSize = Math.random() * 10 + 15 + "px";
                 document.body.appendChild(heart);
             }
         }
