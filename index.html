@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Kassandra 🤍</title>
-    <!-- Fuentes elegantes similares a las de la imagen -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&display=swap" rel="stylesheet">
@@ -24,7 +23,6 @@
             font-family: 'Arial', sans-serif;
         }
 
-        /* Lluvia de corazones */
         .heart {
             position: fixed;
             top: -10vh;
@@ -38,7 +36,6 @@
             to { transform: translateY(110vh); }
         }
 
-        /* Pantallas generales */
         .screen {
             display: none;
             width: 100vw;
@@ -55,7 +52,6 @@
             display: flex;
         }
 
-        /* --- PANTALLA PRINCIPAL DE OPCIONES --- */
         #main-selector-screen {
             flex-direction: column;
             gap: 20px;
@@ -90,7 +86,6 @@
             transform: scale(1.05);
         }
 
-        /* --- PANTALLA DE ACCESO (Kassandra) --- */
         #login-screen {
             flex-direction: column;
             z-index: 50;
@@ -126,7 +121,6 @@
             background-color: #ccc;
         }
 
-        /* --- CONTENIDO ORIGINAL --- */
         #original-content-screen {
             flex-direction: column;
             justify-content: flex-start;
@@ -204,33 +198,33 @@
             font-size: 17px;
         }
 
-        /* --- IMÁGENES INTERACTIVAS CON TEXTOS ENCABEZADO Y PIE --- */
+        /* --- MARCO DE NUESTRO UNIVERSO --- */
         .universe-frame {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            width: 100%;
+            width: 100vw;
             height: 100vh;
-            padding: 15px 0;
+            padding: 20px 10px;
             box-sizing: border-box;
         }
 
         .title-header {
             font-family: 'Great Vibes', cursive;
-            font-size: 3.2rem;
+            font-size: 3rem;
             color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
             text-align: center;
             z-index: 10;
             user-select: none;
         }
 
         .subtitle-footer {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.8rem;
-            color: #e0e0e0;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
             text-align: center;
             z-index: 10;
             user-select: none;
@@ -240,11 +234,11 @@
             position: relative;
             width: 100%;
             flex: 1;
-            max-width: calc(100vh * (990 / 557));
-            max-height: calc(100vw * (557 / 990));
+            max-width: 900px;
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
+            margin: 10px 0;
         }
 
         #letter-screen .img-container {
@@ -255,19 +249,22 @@
             background-image: url('IMG_20261010_155933_632.jpg');
         }
 
-        .nav-btn {
-            position: absolute;
-            top: 15px;
-            left: 15px;
+        .nav-container {
+            display: flex;
+            gap: 20px;
             z-index: 20;
+            margin-bottom: 10px;
+        }
+
+        .nav-btn {
             background: #3a0303;
             color: #fff;
             border: 2px solid #5c0606;
-            padding: 6px 14px;
+            padding: 8px 18px;
             border-radius: 6px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             box-shadow: 0 3px 8px rgba(0,0,0,0.5);
         }
         .nav-btn:hover {
@@ -367,28 +364,28 @@
 </head>
 <body>
 
-    <!-- 1. PANTALLA SELECTORA PRINCIPAL -->
     <div id="main-selector-screen" class="screen active">
         <h1>Elige una experiencia 🤍</h1>
         <button class="choice-btn" onclick="goToOriginal()">Ver Contenido Original (100 cosas, Poemas...)</button>
         <button class="choice-btn" onclick="goToImages()">Ver Nuestro Universo (Carta y Playlist)</button>
     </div>
 
-    <!-- 2. PANTALLA DE ACCESO (Para el contenido original) -->
     <div id="login-screen" class="screen">
-        <button class="nav-btn" onclick="showScreen('main-selector-screen')">← Volver</button>
+        <div style="position: absolute; top: 15px; left: 15px;">
+            <button class="nav-btn" onclick="showScreen('main-selector-screen')">← Volver</button>
+        </div>
         <h1>¿Cómo te llamas? 🤍</h1>
         <input type="text" id="name-input" placeholder="Escribe tu nombre...">
         <button class="action-btn" onclick="checkName()">Entrar</button>
         <p id="error-message" style="color: #ff6b6b; display: none; margin-top: 15px; font-weight: bold;">Acceso denegado. Este espacio es solo para Kassandra.</p>
     </div>
 
-    <!-- 3. CONTENIDO ORIGINAL (Protegido por nombre) -->
     <div id="original-content-screen" class="screen">
-        <button class="nav-btn" onclick="showScreen('main-selector-screen')">← Menú Principal</button>
-        <h1 style="margin-top: 20px;">Para la dueña de mi corazón 🤍</h1>
+        <div style="position: absolute; top: 15px; left: 15px; z-index: 20;">
+            <button class="nav-btn" onclick="showScreen('main-selector-screen')">← Menú Principal</button>
+        </div>
+        <h1 style="margin-top: 40px;">Para la dueña de mi corazón 🤍</h1>
         
-        <!-- 100 Cosas -->
         <div class="section">
             <h2>100 Cosas que más me gustan de ti</h2>
             <div class="list-container">
@@ -497,7 +494,6 @@
             </div>
         </div>
 
-        <!-- Poemas -->
         <div class="section">
             <h2>Poemas para ti</h2>
             <p class="poem-text">
@@ -512,7 +508,6 @@
             </p>
         </div>
 
-        <!-- Lee esto cuando estés... -->
         <div class="section">
             <h2>Lee esto cuando estés...</h2>
             <details>
@@ -533,7 +528,6 @@
             </details>
         </div>
 
-        <!-- Tú eres -->
         <div class="section">
             <h2>Tú eres...</h2>
             <p style="text-align: center; font-size: 20px; font-weight: bold; line-height: 1.8;">
@@ -545,25 +539,23 @@
         </div>
     </div>
 
-    <!-- 4. PANTALLA DE CARTA CON ENCABEZADO Y PIE -->
+    <!-- Pantalla de Carta -->
     <div id="letter-screen" class="screen">
-        <button class="nav-btn" onclick="showScreen('main-selector-screen')">← Menú Principal</button>
-        <button class="nav-btn" style="left: 150px;" onclick="showScreen('playlist-screen')">Playlist →</button>
-        
         <div class="universe-frame">
             <div class="title-header">Nuestro Universo</div>
             <div class="img-container">
                 <div class="snoopy-hitbox" onclick="handleSnoopyTap()" title="Snoopy"></div>
             </div>
+            <div class="nav-container">
+                <button class="nav-btn" onclick="showScreen('main-selector-screen')">← Menú</button>
+                <button class="nav-btn" onclick="showScreen('playlist-screen')">Playlist →</button>
+            </div>
             <div class="subtitle-footer">Christian y Kassandra</div>
         </div>
     </div>
 
-    <!-- 5. PANTALLA DE PLAYLIST CON ENCABEZADO Y PIE -->
+    <!-- Pantalla de Playlist -->
     <div id="playlist-screen" class="screen">
-        <button class="nav-btn" onclick="showScreen('main-selector-screen')">← Menú Principal</button>
-        <button class="nav-btn" style="left: 150px;" onclick="showScreen('letter-screen')">← Carta</button>
-
         <div class="universe-frame">
             <div class="title-header">Nuestro Universo</div>
             <div class="img-container">
@@ -577,6 +569,10 @@
                         <button onclick="addSong()">Guardar Canción Permanentemente</button>
                     </div>
                 </div>
+            </div>
+            <div class="nav-container">
+                <button class="nav-btn" onclick="showScreen('main-selector-screen')">← Menú</button>
+                <button class="nav-btn" onclick="showScreen('letter-screen')">← Carta</button>
             </div>
             <div class="subtitle-footer">Christian y Kassandra</div>
         </div>
